@@ -38,13 +38,14 @@ const CenterButton = ({ onClick }) => {
             },
           }}
         >
-          <RestaurantIcon sx={{ fontSize: 60, color: 'white' }} />
+          <RestaurantIcon sx={{ fontSize: 60, color: '#FFFFFF' }} />
           <Typography
             variant="h6"
             sx={{
               color: 'white',
               fontWeight: 700,
               textTransform: 'none',
+              textShadow: '0 1px 2px rgba(0, 0, 0, 0.15)',
             }}
           >
             Explore Products

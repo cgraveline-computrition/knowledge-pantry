@@ -10,7 +10,7 @@ const products = [
   { 
     id: 1, 
     name: 'Foodservice Operations', 
-    color: '#FF6B35', 
+    color: '#D94F1E', 
     icon: RestaurantMenuIcon,
     description: 'Manage food production and forecast food supply.',
     links: [
@@ -34,7 +34,7 @@ const products = [
   { 
     id: 2, 
     name: 'Nutrition Care', 
-    color: '#F7931E', 
+    color: '#1B7A8A', 
     icon: LocalHospitalIcon,
     description: 'Serve meals that comply with diet orders and allergy conflicts.',
     links: [
@@ -48,7 +48,7 @@ const products = [
   { 
     id: 3, 
     name: 'Retail', 
-    color: '#4ECDC4', 
+    color: '#E8A020', 
     icon: StorefrontIcon,
     description: 'Promote on-premises dining and streamline throughput.',
     links: [
@@ -60,7 +60,7 @@ const products = [
   { 
     id: 4, 
     name: 'Data & Integration', 
-    color: '#95E1D3', 
+    color: '#5B3A8C', 
     icon: IntegrationInstructionsIcon,
     description: 'Connect systems, streamline operations.',
     links: [
@@ -99,7 +99,12 @@ const PinwheelSelector = ({ onProductSelect }) => {
         viewBox="0 0 500 500"
         style={{ position: 'absolute', top: 0, left: 0 }}
       >
-        {products.map((product, index) => {
+        {[...products].sort((a, b) => {
+          if (a.id === hoveredId) return 1;
+          if (b.id === hoveredId) return -1;
+          return 0;
+        }).map((product) => {
+          const index = products.indexOf(product);
           const startAngle = index * anglePerSection - 90;
           const endAngle = (index + 1) * anglePerSection - 90;
           const largeArcFlag = anglePerSection > 180 ? 1 : 0;
@@ -131,9 +136,11 @@ const PinwheelSelector = ({ onProductSelect }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                filter: 'brightness(1.2)',
+                fillOpacity: 1,
+                strokeWidth: 6,
+                zIndex: 1
               }}
               onMouseEnter={() => setHoveredId(product.id)}
               onMouseLeave={() => setHoveredId(null)}
@@ -146,7 +153,7 @@ const PinwheelSelector = ({ onProductSelect }) => {
       {products.map((product, index) => {
         const angle = (index * anglePerSection + anglePerSection / 2 - 90) * (Math.PI / 180);
         // Adjust for larger pie size
-        const centerRadius = 137;
+        const centerRadius = 150;
         const x = 250 + centerRadius * Math.cos(angle);
         const y = 250 + centerRadius * Math.sin(angle);
         const Icon = product.icon;
@@ -159,8 +166,8 @@ const PinwheelSelector = ({ onProductSelect }) => {
             transition={{ delay: 0.3 + index * 0.1 }}
             style={{
               position: 'absolute',
-              left: x - 18,
-              top: y,
+              left: x - 45,
+              top: y - 40,
               transform: 'translate(-50%, -50%)',
               pointerEvents: 'none',
               display: 'flex',
