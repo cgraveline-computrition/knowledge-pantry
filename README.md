@@ -1,4 +1,4 @@
-# Food Service Products App
+# Computrition Knowledge Pantry
 
 A single-page React application with MUI featuring an animated pinwheel product selector.
 
