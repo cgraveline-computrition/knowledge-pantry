@@ -166,8 +166,8 @@ const PinwheelSelector = ({ onProductSelect }) => {
             transition={{ delay: 0.3 + index * 0.1 }}
             style={{
               position: 'absolute',
-              left: x - 45,
-              top: y - 40,
+              left: x - 50,
+              top: y - 50,
               transform: 'translate(-50%, -50%)',
               pointerEvents: 'none',
               display: 'flex',
@@ -175,8 +175,7 @@ const PinwheelSelector = ({ onProductSelect }) => {
               alignItems: 'center',
               justifyContent: 'center',
               gap: 4,
-              width: 85,
-              maxWidth: 85,
+              width: 110,
             }}
           >
             <Icon sx={{ fontSize: 36, color: 'white', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }} />
@@ -187,7 +186,7 @@ const PinwheelSelector = ({ onProductSelect }) => {
                 fontWeight: 700,
                 textAlign: 'center',
                 textShadow: '0 2px 4px rgba(0,0,0,0.5)',
-                fontSize: '0.8rem',
+                fontSize: '1.05rem',
                 lineHeight: 1.15,
                 wordBreak: 'break-word',
                 overflow: 'hidden',
@@ -211,7 +210,7 @@ const PinwheelSelector = ({ onProductSelect }) => {
           width: 100,
           height: 100,
           borderRadius: '50%',
-          background: 'white',
+          background: '#14C7E0',
           boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
           display: 'flex',
           alignItems: 'center',
@@ -219,7 +218,7 @@ const PinwheelSelector = ({ onProductSelect }) => {
           zIndex: 10,
         }}
       >
-        <Typography variant="body2" sx={{ fontWeight: 700, color: '#FF6B35', textAlign: 'center' }}>
+        <Typography variant="body" sx={{ fontWeight: 700, color: 'white', textAlign: 'center' }}>
           Select
         </Typography>
       </Box>
