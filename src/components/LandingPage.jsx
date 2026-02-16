@@ -39,7 +39,7 @@ const LandingPage = ({ onProductSelect }) => {
       >
         <Box
           component="img"
-          src="/logo.jpg"
+          src={`${import.meta.env.BASE_URL}logo.jpg`}
           alt="Knowledge Pantry Logo"
           onError={(e) => {
             // Hide logo if image fails to load
