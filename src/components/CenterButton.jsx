@@ -23,24 +23,24 @@ const CenterButton = ({ onClick }) => {
         <Button
           onClick={onClick}
           variant="contained"
-          sx={{
-            width: 240,
-            height: 240,
-            borderRadius: '50%',
+          sx={{ 
+            px: 6,
+            py: 3,
+            borderRadius: '50px',
             background: '#14C7E0',
             boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
             display: 'flex',
-            flexDirection: 'column',
-            gap: 2,
+            flexDirection: 'row',
+            gap: 1.5,
             '&:hover': {
               background: '#14C7E0',
               boxShadow: '0 15px 50px rgba(0,0,0, .8)',
             },
           }}
         >
-          <RestaurantIcon sx={{ fontSize: 60, color: '#FFFFFF' }} />
+          <RestaurantIcon sx={{ fontSize: 36, color: '#0d6cfaff' }} />
           <Typography
-            variant="h6"
+            variant="h5"
             sx={{
               color: 'white',
               fontWeight: 700,

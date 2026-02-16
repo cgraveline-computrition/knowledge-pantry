@@ -35,6 +35,9 @@ const LandingPage = ({ onProductSelect }) => {
           top: 24,
           left: 24,
           zIndex: 3,
+          borderRadius: 2,
+          overflow: 'hidden',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
         }}
       >
         <Box
@@ -42,13 +45,13 @@ const LandingPage = ({ onProductSelect }) => {
           src={`${import.meta.env.BASE_URL}logo.jpg`}
           alt="Knowledge Pantry Logo"
           onError={(e) => {
-            // Hide logo if image fails to load
             e.target.style.display = 'none';
           }}
           sx={{
-            width: 350,
+            width: 280,
             height: 'auto',
-            filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.3))',
+            display: 'block',
+            objectFit: 'fill',
           }}
         />
       </Box>
@@ -61,8 +64,9 @@ const LandingPage = ({ onProductSelect }) => {
           width: '100%',
           height: '100%',
           display: 'flex',
-          alignItems: 'center',
+          alignItems: 'flex-end',
           justifyContent: 'center',
+          paddingBottom: '15vh',
           zIndex: 2,
         }}
       >
