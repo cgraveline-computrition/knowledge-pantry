@@ -27,7 +27,7 @@ const CenterButton = ({ onClick }) => {
             px: 6,
             py: 3,
             borderRadius: '50px',
-            background: '#14C7E0',
+            background: 'rgba(20, 199, 224, .9)',
             boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
             display: 'flex',
             flexDirection: 'row',

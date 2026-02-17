@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box } from '@mui/material';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import VideoBackground from './VideoBackground.jsx';
 import PinwheelSelector from './PinwheelSelector.jsx';
 import CenterButton from './CenterButton.jsx';
@@ -42,7 +42,7 @@ const LandingPage = ({ onProductSelect }) => {
       >
         <Box
           component="img"
-          src={`${import.meta.env.BASE_URL}logo.jpg`}
+          src={`${import.meta.env.BASE_URL}kp-logo.png`}
           alt="Knowledge Pantry Logo"
           onError={(e) => {
             e.target.style.display = 'none';
@@ -52,6 +52,8 @@ const LandingPage = ({ onProductSelect }) => {
             height: 'auto',
             display: 'block',
             objectFit: 'fill',
+            backgroundColor: 'rgba(255,255,255, .9)',
+            padding: '20px 30px'
           }}
         />
       </Box>
