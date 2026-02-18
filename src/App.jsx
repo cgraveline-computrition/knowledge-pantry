@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import LandingPage from './components/LandingPage.jsx';
 import ProductOverlay from './components/ProductOverlay.jsx';
+
+const LandingPage = lazy(() => import('./components/LandingPage.jsx'));
 
 const theme = createTheme({
   palette: {
@@ -33,7 +34,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <LandingPage onProductSelect={setSelectedProduct} />
+      <Suspense fallback={null}>
+        <LandingPage onProductSelect={setSelectedProduct} />
+      </Suspense>
       <ProductOverlay 
         product={selectedProduct} 
         onClose={() => setSelectedProduct(null)} 
